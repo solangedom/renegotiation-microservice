@@ -1,6 +1,6 @@
 package br.com.solangedomingues.core.service;
 
-import br.com.solangedomingues.core.service.processors.RenegotiationClientProcessor;
+import br.com.solangedomingues.core.service.processors.RenegotiationCustomerProcessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,15 +17,15 @@ import static java.util.Optional.ofNullable;
 @RequiredArgsConstructor
 public class RenegotiationService {
 
-    private final Set<RenegotiationClientProcessor> processors;
+    private final Set<RenegotiationCustomerProcessor> processors;
 
-    public void processRenegotiationClient(String type, LocalDate processDate) {
+    public void processRenegotiationCustomer(String type, LocalDate processDate) {
         log.info("M=processRenegotiationClient, stage=init, type={}, processDate={}", type, processDate);
 
-        final RenegotiationClientProcessor processor = processors.stream()
-                .collect(Collectors.toMap(RenegotiationClientProcessor::type, Function.identity())).get(type);
+        final RenegotiationCustomerProcessor processor = processors.stream()
+                .collect(Collectors.toMap(RenegotiationCustomerProcessor::type, Function.identity())).get(type);
 
-        ofNullable(processor).ifPresentOrElse(it -> it.processRenegotiationClient(processDate),
+        ofNullable(processor).ifPresentOrElse(it -> it.process(processDate),
                 () -> log.info("M=processRenegotiationClient, stage=processNotFound, type={}", type));
     }
 

@@ -29,3 +29,6 @@ replay_pid*
 # Build
 build/
 .DS_store
+
+# Idea
+.idea/

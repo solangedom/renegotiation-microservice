@@ -1,8 +1,7 @@
 package br.com.solangedomingues.core.service;
 
-import br.com.solangedomingues.core.domain.customer.CustomerPJ;
 import br.com.solangedomingues.core.domain.debt.Debt;
-import br.com.solangedomingues.core.repository.CustomerPJRepository;
+import br.com.solangedomingues.core.domain.enumeration.CustomerType;
 import br.com.solangedomingues.core.repository.DebtRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +16,8 @@ public class DebtService {
 
     private final DebtRepository debtRepository;
 
-    public List<Debt> findAll(){
-        return debtRepository.findAll();
+    public List<Debt> findDebtByCustomerType(CustomerType type) {
+        return debtRepository.findDebtByCustomerType(type);
     }
+
 }

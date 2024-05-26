@@ -2,9 +2,9 @@ package br.com.solangedomingues.core.service.processors;
 
 import java.time.LocalDate;
 
-public interface RenegotiationClientProcessor {
+public interface RenegotiationCustomerProcessor {
 
-    void processRenegotiationClient(LocalDate processDate);
+    void process(LocalDate processDate);
 
     String type();
 

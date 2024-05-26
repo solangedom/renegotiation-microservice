@@ -15,7 +15,7 @@ public class CustomerPFService {
 
     private final CustomerPFRepository customerPFRepository;
 
-    public List<CustomerPF> findAll(){
+    public List<CustomerPF> findAll() {
         return customerPFRepository.findAll();
     }
 

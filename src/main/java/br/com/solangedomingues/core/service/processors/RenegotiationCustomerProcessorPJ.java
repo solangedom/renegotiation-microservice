@@ -16,21 +16,21 @@ import static br.com.solangedomingues.core.domain.enumeration.CustomerType.PJ;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class RenegotiationClientProcessorPJ implements RenegotiationClientProcessor {
+public class RenegotiationCustomerProcessorPJ implements RenegotiationCustomerProcessor {
 
     private final CustomerPJService customerPJService;
 
     private final DebtService debtService;
 
     @Override
-    public void processRenegotiationClient(LocalDate processDate) {
+    public void process(LocalDate processDate) {
         // TODO: Business Rules PJ #fake
 
         List<CustomerPJ> clientPJList = customerPJService.findAll();
         log.info("Clients PJ list:{}", clientPJList);
 
-        List<Debt> debtList = debtService.findAll();
-        log.info("Debt list:{}", debtList);
+        List<Debt> debtList = debtService.findDebtByCustomerType(PJ);
+        log.info("Debt Customer PJ list:{}", debtList);
 
     }
 

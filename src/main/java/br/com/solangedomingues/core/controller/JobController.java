@@ -19,9 +19,9 @@ public class JobController {
     private final RenegotiationService renegotiationService;
 
     @PostMapping(path = "/process-renegotiation")
-    public ResponseEntity<Void> processRenegotiationClient(@RequestParam String type,
-                                                           @RequestParam LocalDate processDate) {
-        renegotiationService.processRenegotiationClient(type, processDate);
+    public ResponseEntity<Void> processRenegotiationCustomer(@RequestParam String type,
+                                                             @RequestParam LocalDate processDate) {
+        renegotiationService.processRenegotiationCustomer(type, processDate);
         return ResponseEntity.noContent().build();
     }
 

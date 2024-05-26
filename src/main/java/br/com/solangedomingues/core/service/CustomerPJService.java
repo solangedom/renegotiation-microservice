@@ -15,7 +15,7 @@ public class CustomerPJService {
 
     private final CustomerPJRepository customerPJRepository;
 
-    public List<CustomerPJ> findAll(){
+    public List<CustomerPJ> findAll() {
         return customerPJRepository.findAll();
     }
 
