@@ -1,7 +1,8 @@
-package br.com.solangedomingues.core.service;
+package br.com.solangedomingues.core.unit.service;
 
 import br.com.solangedomingues.core.domain.customer.CustomerPJ;
-import br.com.solangedomingues.core.repository.CustomerPJRepository;
+import br.com.solangedomingues.core.repositories.CustomerPJRepository;
+import br.com.solangedomingues.core.service.CustomerPJService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.mock.mockito.MockBean;

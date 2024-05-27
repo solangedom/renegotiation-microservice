@@ -1,7 +1,8 @@
-package br.com.solangedomingues.core.service.processors;
+package br.com.solangedomingues.core.unit.service.processors;
 
 import br.com.solangedomingues.core.service.CustomerPJService;
 import br.com.solangedomingues.core.service.DebtService;
+import br.com.solangedomingues.core.service.processors.RenegotiationCustomerProcessorPJ;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.mock.mockito.MockBean;

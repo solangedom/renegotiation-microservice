@@ -1,5 +1,6 @@
-package br.com.solangedomingues.core.service;
+package br.com.solangedomingues.core.unit.service;
 
+import br.com.solangedomingues.core.service.RenegotiationService;
 import br.com.solangedomingues.core.service.processors.RenegotiationCustomerProcessorPF;
 import br.com.solangedomingues.core.service.processors.RenegotiationCustomerProcessorPJ;
 import org.junit.jupiter.api.Test;

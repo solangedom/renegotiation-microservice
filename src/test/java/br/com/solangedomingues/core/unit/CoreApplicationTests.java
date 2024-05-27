@@ -1,4 +1,4 @@
-package br.com.solangedomingues.core;
+package br.com.solangedomingues.core.unit;
 
 import br.com.solangedomingues.core.controller.JobController;
 import org.junit.jupiter.api.Test;

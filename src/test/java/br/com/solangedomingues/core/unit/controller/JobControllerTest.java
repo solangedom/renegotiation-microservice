@@ -1,5 +1,6 @@
-package br.com.solangedomingues.core.controller;
+package br.com.solangedomingues.core.unit.controller;
 
+import br.com.solangedomingues.core.controller.JobController;
 import br.com.solangedomingues.core.service.RenegotiationService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
