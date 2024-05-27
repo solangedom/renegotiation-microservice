@@ -13,6 +13,7 @@ import java.time.LocalDate;
 import static br.com.solangedomingues.core.domain.enumeration.CustomerType.PF;
 import static br.com.solangedomingues.core.mock.CustomerPFMock.getCustomerPFList;
 import static br.com.solangedomingues.core.mock.DebtMock.debtPFList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -39,6 +40,12 @@ public class RenegotiationCustomerProcessorPFTest {
 
         verify(debtService).findDebtByCustomerType(PF);
         verify(customerPFService).findAll();
+    }
+
+    @Test
+    void typeCurrentPFTest(){
+        String type = renegotiationClientProcessorPF.type();
+        assertEquals(type, PF.name());
     }
 
 }

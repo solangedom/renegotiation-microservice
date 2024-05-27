@@ -10,9 +10,11 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
 
+import static br.com.solangedomingues.core.domain.enumeration.CustomerType.PF;
 import static br.com.solangedomingues.core.domain.enumeration.CustomerType.PJ;
 import static br.com.solangedomingues.core.mock.CustomerPJMock.getCustomerPJList;
 import static br.com.solangedomingues.core.mock.DebtMock.debtPJList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -39,6 +41,12 @@ public class RenegotiationCustomerProcessorPJTest {
 
         verify(debtService).findDebtByCustomerType(PJ);
         verify(customerPJService).findAll();
+    }
+
+    @Test
+    void typeCurrentPFTest(){
+        String type = renegotiationClientProcessorPJ.type();
+        assertEquals(type, PJ.name());
     }
 
 }
