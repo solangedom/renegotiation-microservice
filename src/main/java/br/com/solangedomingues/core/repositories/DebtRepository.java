@@ -11,11 +11,6 @@ import java.util.List;
 @Repository
 public interface DebtRepository extends JpaRepository<Debt, Long> {
 
-    @Query("""
-            SELECT d FROM Debt d
-            JOIN d.customer c
-            WHERE c.type = :type
-            """)
     List<Debt> findDebtByCustomerType(CustomerType type);
 
 }
